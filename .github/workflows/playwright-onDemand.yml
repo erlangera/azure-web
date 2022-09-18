@@ -68,7 +68,7 @@ jobs:
       with:
         external_repository: erlangera/intern-js-pipeline
         publish_branch: gh-pages
-        personal_token: ${{ secrets.PAT_TOKEN }}
+        deploy_key: ${{ secrets.DEPLOY_PRI }} 
         publish_dir: ${{steps.download.outputs.download-path}}
         destination_dir: test-reports/${{ github.repository }}
         keep_files: true
