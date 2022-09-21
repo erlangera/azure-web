@@ -56,7 +56,7 @@ jobs:
       if: always()
       uses: peaceiris/actions-gh-pages@v3.7.3
       with:
-        external_repository: erlangera/intern-js-pipeline
+        external_repository: erlangera/test-report-dashboard
         publish_branch: gh-pages
         personal_token: ${{ secrets.PAT_TOKEN }}
         publish_dir: ${{steps.download.outputs.download-path}}
@@ -82,5 +82,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}
         run: |
-          gh api repos/erlangera/intern-js-pipeline/dispatches \
+          gh api repos/erlangera/test-report-dashboard/dispatches \
               --raw-field event_type=rebuild-site
